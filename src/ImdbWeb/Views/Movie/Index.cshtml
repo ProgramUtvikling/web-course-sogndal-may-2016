@@ -1,0 +1,12 @@
+﻿@using ImdbBL
+@model IEnumerable<Movie>
+
+<h2>Filmer</h2>
+<ul>
+	@foreach (var movie in Model)
+	{
+		<li>
+			<a asp-action="Details" asp-controller="Movie" asp-route-id="@movie.MovieId">@movie.Title - @movie.MovieId</a>
+		</li>
+	}
+</ul>
