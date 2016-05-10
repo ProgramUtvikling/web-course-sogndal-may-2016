@@ -1,2 +1,2 @@
-# web-course-sogndal-may-2016
-Instructors playground from the course
+# webkurs-mai-2016-sogndal
+Instructor's playground from the course
