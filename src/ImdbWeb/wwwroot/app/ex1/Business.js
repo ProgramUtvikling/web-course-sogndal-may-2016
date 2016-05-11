@@ -1,6 +1,12 @@
 
-function Business(title, latitude, longitude){
-    Place.apply(this, arguments);
-}
+define(["ex1/Place"], function(Place) {
+	"use strict";
 
-Business.prototype = Object.create(Place.prototype);
+	function Business(title, latitude, longitude) {
+		Place.apply(this, arguments);
+	}
+
+	Business.prototype = Object.create(Place.prototype);
+
+	return Business;
+});

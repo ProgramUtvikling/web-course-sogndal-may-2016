@@ -1,0 +1,12 @@
+{
+	"version": "1.0.0",
+	"name": "imdbweb",
+	"private": true,
+	"devDependencies": {
+	},
+	"dependencies": {
+		"requirejs": "^2.2.0",
+		"lodash": "^4.12.0",
+		"jquery": "^2.2.3"
+	}
+}
