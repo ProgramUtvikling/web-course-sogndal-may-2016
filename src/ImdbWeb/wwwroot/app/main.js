@@ -1,8 +1,9 @@
 ﻿
-console.log("Hello world!");
-console.warn("advarsel");
-console.error("Ooops");
-console.info("Info");
+var hjemme = new Home("Hjemme", 59.922315, 10.49115, "A+M+M+M+H");
+var hotellet = new Business("Hotellet", 61.229968, 7.098702);
 
 
+
+console.log(hjemme.toString());
+console.log(hotellet.toString());
 

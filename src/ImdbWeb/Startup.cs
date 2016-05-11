@@ -43,6 +43,8 @@ namespace WebApplication2
 
 			services.Configure<MvcOptions>(options =>
 			{
+				options.RespectBrowserAcceptHeader = true;
+
 				var jsonOutputFormatter = new JsonOutputFormatter();
 				jsonOutputFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 				options.OutputFormatters.Insert(0, jsonOutputFormatter);
@@ -50,9 +52,11 @@ namespace WebApplication2
 				var jsonInputFormatter = new JsonInputFormatter();
 				jsonInputFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 				options.InputFormatters.Insert(0, jsonInputFormatter);
+
+				options.OutputFormatters.Insert(0, new HttpNotAcceptableOutputFormatter());
 			});
 
-
+			//services.AddScoped<IMovieService, WsMovieService>();
 			services.AddScoped<IMovieService, DbMovieService>();
 			services.AddTransient<ImdbContext>();
 
@@ -68,6 +72,7 @@ namespace WebApplication2
 			app.UseDefaultFiles();
 			app.UseStaticFiles();
 			app.UseMvc();
+			//app.UseMvcWithDefaultRoute();
 		}
 
 		// Entry point for the application.

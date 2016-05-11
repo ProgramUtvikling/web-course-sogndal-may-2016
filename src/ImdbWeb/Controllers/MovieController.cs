@@ -60,7 +60,7 @@ namespace WebApplication2.Controllers
 			return Content(doc.ToString(), "application/xml");
 		}
 
-		[HttpGet("~/api/movie/{id}")]
+		[HttpGet("~/api/movies/{id}")]
 		public IActionResult GetMovie(string id)
 		{
 			var movie = _movieService.GetMovieById(id);
@@ -72,7 +72,7 @@ namespace WebApplication2.Controllers
 			return Ok(movie);
 		}
 
-		[HttpGet("~/api/movie")]
+		[HttpGet("~/api/movies")]
 		public IActionResult GetMovies()
 		{
 			var movie = _movieService.GetMovies();
@@ -80,19 +80,48 @@ namespace WebApplication2.Controllers
 			return Ok(movie);
 		}
 
-		[HttpPut("~/api/movie/{id}")]
+		[HttpPut("~/api/movies/{id}")]
 		public IActionResult PostMovie(string id, Movie updatedMovie)
 		{
-			var existingMovie = _movieService.GetMovieById(id);
-			if (existingMovie == null)
+			if (!ModelState.IsValid)
 			{
-				return HttpNotFound();
+				return HttpBadRequest(ModelState);
 			}
 
-			// oppdater filmen
+			if (id != updatedMovie.MovieId)
+			{
+				return HttpBadRequest();
+			}
 
+			//if (!_movieService.MovieExists(id))
+			//{
+			//	return HttpNotFound();
+			//}
 
-			return new HttpStatusCodeResult(StatusCodes.Status201Created);
+			//if (!_movieService.UpdateMovie(id, updatedMovie))
+			//{
+			//	return HttpBadRequest();
+			//}
+
+			return new HttpStatusCodeResult(StatusCodes.Status204NoContent);
 		}
+
+		[HttpDelete("~/api/movies/{id}")]
+		public IActionResult DeleteMovie(string id)
+		{
+			//if (!_movieService.MovieExists(id))
+			//{
+			//	return HttpNotFound();
+			//}
+
+			//if (!_movieService.DeleteMovie(id))
+			//{
+			//	return HttpBadRequest();
+			//}
+			
+			return new HttpStatusCodeResult(StatusCodes.Status204NoContent);
+		}
+
 	}
 }
+
