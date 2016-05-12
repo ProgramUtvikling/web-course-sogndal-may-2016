@@ -80,6 +80,12 @@ namespace WebApplication2.Controllers
 			return Ok(movie);
 		}
 
+		[HttpGet("~/api/movies/fail")]
+		public IActionResult Fail()
+		{
+			throw new Exception();
+		}
+
 		[HttpPut("~/api/movies/{id}")]
 		public IActionResult PostMovie(string id, Movie updatedMovie)
 		{
