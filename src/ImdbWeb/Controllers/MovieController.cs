@@ -38,7 +38,7 @@ namespace WebApplication2.Controllers
 			}
 
 			ViewData.Model = movie;
-			return View();
+			return PartialView();
 		}
 
 		[Route("DetailsAsData1/{id}")]
