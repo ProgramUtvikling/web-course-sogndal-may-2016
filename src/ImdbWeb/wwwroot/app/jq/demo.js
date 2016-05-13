@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿$(function () {
 	"use strict";
 
@@ -27,3 +28,17 @@
 	});
 });
 
+=======
+﻿(function (undefined) {
+	"use strict";
+
+	 Q($.ajax({ url: "/api/movies/fail" }))
+		.then(function (data) {
+			console.log("4. Vi har fått data fra server");
+		})
+		.catch(function() {
+			 console.log("Oooops!");
+		 });
+
+})();
+>>>>>>> parent of 4bd1f25... OOB call med partial page
