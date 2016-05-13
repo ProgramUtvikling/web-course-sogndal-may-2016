@@ -1,0 +1,26 @@
+body {
+	background: linear-gradient(180deg, lightskyblue 0, lightskyblue 5px, white 200px) no-repeat;
+	width: 100%;
+
+	font-family: sans-serif;
+}
+
+body>div {
+	width: 900px;
+	border: thin solid lightskyblue;
+	padding: 8px 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background: hsla(0, 0%, 100%, .7);
+}
+
+body>div>h1:first-child {
+	margin-top: 0;
+}
+
+ul {
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: .5em;
+	padding-left: 0;
+}

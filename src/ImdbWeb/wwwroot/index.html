@@ -3,21 +3,53 @@
 <head>
 	<meta charset="utf-8" />
 	<title></title>
+	<link href="styles/stylesheet.css" rel="stylesheet"/>
+	<style>
+		.fouc-hide {
+			display: none;
+		}
+	</style>
 </head>
 <body>
-	<h1>Her tester vi JS</h1>
-	<p>Output kommer i JavaScript consolet.</p>
+	<div>
 
-	<label>Tast in film-id</label>
-	<input type="text" id="movieId" />
-	<button id="findMovie">Hent info</button>
+		<h1>Her tester vi JS</h1>
+		<p>Output kommer i JavaScript consolet.</p>
 
-	<div id="cph">
-		Her kommer filmen
+		<button data-bind="click: showAllMovies">Vis alle filmer</button>
+
+		<div data-bind="with: movie" class="fouc-hide">
+			<p data-bind="text: title"></p>
+			<p data-bind="text: description"></p>
+			<button data-bind="click: $root.back">Tilbake til listen</button>
+		</div>
+
+		<table data-bind="if: movie() == null && movies() != null" class="fouc-hide">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Title</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: movies">
+				<tr>
+					<td data-bind="text: movieId"></td>
+					<td data-bind="text: title"></td>
+					<td>
+						<button data-bind="click: $root.showMovie">Vis info</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
 	</div>
 
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/q.js"></script>
-	<script src="app/jq/demo.js"></script>
+	<script src="lib/knockout-latest.js"></script>
+	<script src="app/ko/demo.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "imdbweb",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Arjan Einbu <arjan@einbu.no>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ProgramUtvikling/web-course-sogndal-may-2016",
+  "private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"jQuery": "^2.2.3"
+	}
+}
