@@ -1,7 +1,14 @@
 # webkurs-mai-2016-sogndal
 Arjans filer fra kurset
 
-## Oppsett
+
+## Oppdatere nodejs
+1. Hent og installer den nyeste versjon av nodejs fra https://nodejs.org/en/
+2. Finn folderen som node ble installert i. (Antakelig i `C:\Program Files (x86)\nodejs`.) Kopier filstien til clipboarden.
+3. I Visual Studio, velg `Tools` / `Options`. Finn frem til `Projects and Solutions` noden, og legg til filstien fra forrige steg 2 __øverst__ i listen.
+
+
+## Sette opp Imdb-databasen
 Prosjektet avhenger av databasen Imdb. Den kan du legge inn i en SQL Server vha. Imdb.dacpac filen som ligger på rot i prosjektet.
 
 
