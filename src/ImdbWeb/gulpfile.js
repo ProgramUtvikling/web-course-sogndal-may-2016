@@ -1,4 +1,5 @@
 ﻿/// <binding AfterBuild='default' />
+console.log("Hello!!!");
 
 var gulp = require('gulp');
 var concat = require("gulp-concat");
